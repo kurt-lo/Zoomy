@@ -9,6 +9,7 @@ import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useToast } from "@/components/ui/use-toast"
 import { Textarea } from "./ui/textarea";
 import ReactDatePicker from 'react-datepicker';
+import { Input } from "@/components/ui/input"
 
 export default function MeetingType() {
 
@@ -49,12 +50,11 @@ export default function MeetingType() {
       })
 
       setCallDetails(call)
+      if (!values.description) router.push(`/meeting/${call.id}`)
       toast({
         title: "Created meeting",
         description: "Enjoy meeting with your peeps",
       })
-
-      if (!values.description) router.push(`/meeting/${call.id}`)
     } catch (error) {
       console.log(error);
       toast({
@@ -142,6 +142,21 @@ export default function MeetingType() {
           }}
         />
       )}
+      {/* MODAL FOR 4th Meeting Card */}
+      <MeetingModal
+        title='Paste the link here'
+        className='text-center'
+        buttonText="Join Meeting"
+        isModalOpen={meetingState === 'isJoiningMeeting'}
+        onClose={() => setMeetingState(undefined)}
+        handleClick={() => router.push(values.link)}
+      >
+        <Input
+          placeholder="Meeting link"
+          className="border-none focus-visible:ring-0"
+          onChange={(e) => setValues({...values, link: e.target.value})}
+        />
+      </MeetingModal>
     </section>
   )
 }

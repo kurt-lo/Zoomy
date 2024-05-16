@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { TbLayoutList } from "react-icons/tb";
 import { FaUsers } from "react-icons/fa";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import EndCallButton from "./EndCallButton";
 
 type CallLayoutType = 'grid' | 'speaker-left' | 'speaker-right'
@@ -26,6 +26,8 @@ export default function MeetingRoom() {
     const [layout, setLayout] = useState('speaker-left')
     const [showParticipants, setShowParticipants] = useState(false);
     
+    const router = useRouter();
+
     const { useCallCallingState} = useCallStateHooks();
     const callingState = useCallCallingState();
 
@@ -55,7 +57,7 @@ export default function MeetingRoom() {
                 </div>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-4">
-                <CallControls />
+                <CallControls onLeave={() => router.push('/')} />
                 <DropdownMenu>
                     <div className="flex items-center justify-center">
                         <DropdownMenuTrigger className="cursor-pointer">
