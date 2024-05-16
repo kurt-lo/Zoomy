@@ -25,7 +25,7 @@ export default function MeetingModal({ title, buttonText, className, isModalOpen
         <Dialog open={isModalOpen} onOpenChange={onClose}>
             <DialogContent className="bg-stone-500 text-gray-50">
                 <div className={cn('text-center', className)}>
-                    <DialogTitle>{title}</DialogTitle>
+                    <DialogTitle className="text-2xl">{title}</DialogTitle>
                 </div>
                 {children}
                 <Button onClick={handleClick}>
