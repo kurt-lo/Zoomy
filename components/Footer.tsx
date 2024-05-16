@@ -5,13 +5,13 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Sidebar() {
+export default function Footer() {
 
     const pathName = usePathname();
 
     return (
-        <section className="flex flex-col justify-between bg-stone-800 sticky left-0 top-0 h-screen w-fit p-6 pt-28 max-sm:hidden lg:w-[264px]">
-            <div className="flex flex-col flex-1 gap-6">
+        <section className="fixed bottom-0 flex backdrop-blur-sm rounded-lg justify-center w-full shadow-2xl">
+            <div className="flex">
                 {sideBarLinks.map((link) => {
                     const isActive = pathName === link.route;
                     return (

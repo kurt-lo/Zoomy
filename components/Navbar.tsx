@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FcConferenceCall } from "react-icons/fc";
 import MobileNav from "./MobileNav";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
   return (

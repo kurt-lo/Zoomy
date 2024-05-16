@@ -71,25 +71,25 @@ export default function MeetingType() {
       <MeetingCard
         title='New meeting'
         description="Start a new meeting"
-        className="bg-green-900"
+        className="backdrop-blur-sm bg-white/10"
         handleClick={() => setMeetingState('isInstantMeeting')}
       />
       <MeetingCard
         title='Schedule meeting'
         description="Start a schedule meeting"
-        className="bg-blue-900"
+        className="backdrop-blur-sm bg-white/30"
         handleClick={() => setMeetingState('isScheduleMeeting')}
       />
       <MeetingCard
         title='View Recordings'
         description="Check recorded meeting"
-        className="bg-pink-900"
+        className="backdrop-blur-sm bg-white/10"
         handleClick={() => router.push('/recordings')}
       />
       <MeetingCard
         title='Join meeting'
         description="Join a new meeting"
-        className="bg-yellow-900"
+        className="backdrop-blur-sm bg-white/30"
         handleClick={() => setMeetingState('isJoiningMeeting')}
       />
       {/* MODAL FOR 1st Meeting Card */}
