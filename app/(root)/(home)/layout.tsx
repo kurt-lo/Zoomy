@@ -8,7 +8,7 @@ export default function HomeLayout({ children }: { children: ReactNode }) {
             <Navbar />
             <div className='flex'>
                 <Sidebar />
-                <section className='flex flex-col flex-1 min-h-screen px-6 pb-6 pt-28 max-md:pb-14 sm:px-14'>
+                <section className='flex flex-col flex-1 min-h-screen pt-28 max-md:pb-14'>
                     <div className='w-full'>
                         {children}
                     </div>
