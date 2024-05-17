@@ -20,6 +20,9 @@ export default function PersonalRoom() {
 
   const router = useRouter();
 
+  // for development
+  // const meetingLink = `http://${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}/personal=true`
+  // for production
   const meetingLink = `https://${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}/personal=true`
 
   const handleStartMeetingRoom = async () => {
