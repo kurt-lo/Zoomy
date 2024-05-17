@@ -153,7 +153,7 @@ export default function MeetingType() {
       >
         <Input
           placeholder="Meeting link"
-          className="border-none focus-visible:ring-0"
+          className="border-none text-primary focus-visible:ring-0"
           onChange={(e) => setValues({...values, link: e.target.value})}
         />
       </MeetingModal>
